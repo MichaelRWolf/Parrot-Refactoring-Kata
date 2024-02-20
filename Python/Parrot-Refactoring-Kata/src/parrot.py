@@ -18,10 +18,6 @@ class Parrot:
     @staticmethod
     def create_parrot(type_of_parrot, number_of_coconuts, voltage, nailed):
         self = Parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
-        self._type = type_of_parrot
-        self._number_of_coconuts = number_of_coconuts
-        self._voltage = voltage
-        self._nailed = nailed
         return self
 
     def speed(self):
