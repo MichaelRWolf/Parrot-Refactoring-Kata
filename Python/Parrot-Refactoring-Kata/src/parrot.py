@@ -13,7 +13,7 @@ class Parrot:
         self.init_parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
 
     @staticmethod
-    def build_parrot(type_of_parrot, number_of_coconuts, voltage, nailed):
+    def create_parrot(type_of_parrot, number_of_coconuts, voltage, nailed):
         self = Parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
         self.init_parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
         return self
