@@ -22,7 +22,7 @@ class Parrot:
             case ParrotType.AFRICAN:
                 parrot = AfricanParrot(number_of_coconuts, voltage, nailed)
             case ParrotType.NORWEGIAN_BLUE:
-                parrot = Parrot(ParrotType.NORWEGIAN_BLUE, number_of_coconuts, voltage, nailed)
+                parrot = NorwegianBlueParrot(number_of_coconuts, voltage, nailed)
             case _:
                 raise ValueError(f"Illegal type {type_of_parrot}")
         return parrot
@@ -72,3 +72,8 @@ class EuropeanParrot(Parrot):
 class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         super().__init__(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
+
+class NorwegianBlueParrot(Parrot):
+    def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
+        super().__init__(ParrotType.NORWEGIAN_BLUE, number_of_coconuts, voltage, nailed)
+
