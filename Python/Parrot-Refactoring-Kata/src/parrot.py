@@ -18,7 +18,7 @@ class Parrot:
     def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot':
         match type_of_parrot:
             case ParrotType.EUROPEAN:
-                parrot = EuropeanParrot(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
+                parrot = EuropeanParrot(number_of_coconuts, voltage, nailed)
             case ParrotType.AFRICAN:
                 parrot = Parrot(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
             case ParrotType.NORWEGIAN_BLUE:
@@ -66,5 +66,5 @@ class Parrot:
 
 
 class EuropeanParrot(Parrot):
-    def __init__(self, type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
+    def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         super().__init__(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
