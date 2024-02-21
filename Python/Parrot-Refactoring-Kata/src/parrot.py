@@ -9,8 +9,8 @@ class ParrotType(Enum):  # If it is not available, just remove it.
 
 
 class Parrot(ABC):
-    def __init__(self, type_of_parrot: ParrotType) -> None:
-        self._type = type_of_parrot
+    def __init__(self) -> None:
+        pass
 
     @staticmethod
     def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot':
@@ -47,7 +47,7 @@ class Parrot(ABC):
 
 class EuropeanParrot(Parrot):
     def __init__(self, number_of_coconuts: int) -> None:
-        super().__init__(ParrotType.EUROPEAN)
+        super().__init__()
 
     def speed(self) -> float:
         return self._base_speed()
@@ -58,7 +58,7 @@ class EuropeanParrot(Parrot):
 
 class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts: int) -> None:
-        super().__init__(ParrotType.AFRICAN)
+        super().__init__()
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self) -> float:
@@ -70,7 +70,7 @@ class AfricanParrot(Parrot):
 
 class NorwegianBlueParrot(Parrot):
     def __init__(self, voltage: float, nailed: bool) -> None:
-        super().__init__(ParrotType.NORWEGIAN_BLUE)
+        super().__init__()
         self._voltage = voltage
         self._nailed = nailed
 
