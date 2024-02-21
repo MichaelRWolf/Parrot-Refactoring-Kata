@@ -9,3 +9,8 @@ https://youtu.be/IvFX8Ivit1k?t=104
 2:14 Add switch(type) statement to factory method
 
 3:12 Emily git-commit "R replace constructor with factory method"
+
+Create subclasses, and call them from factory method
+
+Push GetSpeed() down into subclasses
+
