@@ -32,19 +32,9 @@ class Parrot(ABC):
     def speed(self) -> float:
         pass
 
-    def cry(self):
-        match self._type:
-            case ParrotType.EUROPEAN:
-                return "Sqoork!"
-            case ParrotType.AFRICAN:
-                return "Sqaark!"
-            case ParrotType.NORWEGIAN_BLUE:
-                if self._voltage > 0:
-                    return "Bzzzzzz"
-                else:
-                    return "..."
-
-        raise ValueError("should be unreachable")
+    @abstractmethod
+    def cry(self) -> str:
+        pass
 
     def _compute_base_speed_for_voltage(self, voltage):
         return min([24.0, voltage * self._base_speed()])
@@ -65,6 +55,9 @@ class EuropeanParrot(Parrot):
     def speed(self) -> float:
         return self._base_speed()
 
+    def cry(self) -> str:
+        return "Sqoork!"
+
 
 class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
@@ -72,6 +65,9 @@ class AfricanParrot(Parrot):
 
     def speed(self) -> float:
         return max(0.0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
+
+    def cry(self) -> str:
+        return "Sqaark!"
 
 
 class NorwegianBlueParrot(Parrot):
@@ -83,3 +79,9 @@ class NorwegianBlueParrot(Parrot):
             return 0
         else:
             return self._compute_base_speed_for_voltage(self._voltage)
+
+    def cry(self) -> str:
+        if self._voltage > 0:
+            return "Bzzzzzz"
+        else:
+            return "..."
