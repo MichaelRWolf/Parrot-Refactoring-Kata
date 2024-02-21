@@ -56,8 +56,10 @@ class Parrot:
     def _compute_base_speed_for_voltage(self, voltage):
         return min([24.0, voltage * self._base_speed()])
 
-    def _load_factor(self):
+    @staticmethod
+    def _load_factor() -> float:
         return 9.0
 
-    def _base_speed(self):
+    @staticmethod
+    def _base_speed() -> float:
         return 12.0
