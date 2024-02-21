@@ -8,17 +8,17 @@ class ParrotType(Enum):  # If it is not available, just remove it.
 
 
 class Parrot:
-    def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
+    def __init__(self, type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         self._type = type_of_parrot
         self._number_of_coconuts = number_of_coconuts
         self._voltage = voltage
         self._nailed = nailed
 
     @staticmethod
-    def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot' :
+    def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot':
         match type_of_parrot:
-            case  ParrotType.EUROPEAN:
-                parrot = Parrot(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
+            case ParrotType.EUROPEAN:
+                parrot = EuropeanParrot(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
             case ParrotType.AFRICAN:
                 parrot = Parrot(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
             case ParrotType.NORWEGIAN_BLUE:
