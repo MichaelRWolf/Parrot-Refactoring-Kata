@@ -33,15 +33,16 @@ class Parrot(ABC):
         pass
 
     def cry(self):
-        if self._type == ParrotType.EUROPEAN:
-            return "Sqoork!"
-        if self._type == ParrotType.AFRICAN:
-            return "Sqaark!"
-        if self._type == ParrotType.NORWEGIAN_BLUE:
-            if self._voltage > 0:
-                return "Bzzzzzz"
-            else:
-                return "..."
+        match self._type:
+            case ParrotType.EUROPEAN:
+                return "Sqoork!"
+            case ParrotType.AFRICAN:
+                return "Sqaark!"
+            case ParrotType.NORWEGIAN_BLUE:
+                if self._voltage > 0:
+                    return "Bzzzzzz"
+                else:
+                    return "..."
 
         raise ValueError("should be unreachable")
 
