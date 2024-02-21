@@ -63,3 +63,8 @@ class Parrot:
     @staticmethod
     def _base_speed() -> float:
         return 12.0
+
+
+class EuropeanParrot(Parrot):
+    def __init__(self, type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
+        super().__init__(type_of_parrot, number_of_coconuts, voltage, nailed)
