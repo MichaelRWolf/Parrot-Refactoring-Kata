@@ -16,7 +16,7 @@ class Parrot(ABC):
     def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot':
         match type_of_parrot:
             case ParrotType.EUROPEAN:
-                parrot = EuropeanParrot(number_of_coconuts)
+                parrot = EuropeanParrot()
             case ParrotType.AFRICAN:
                 parrot = AfricanParrot(number_of_coconuts)
             case ParrotType.NORWEGIAN_BLUE:
@@ -46,8 +46,8 @@ class Parrot(ABC):
 
 
 class EuropeanParrot(Parrot):
-    def __init__(self, number_of_coconuts: int) -> None:
-        super().__init__()
+    def __init__(self) -> None:
+        pass
 
     def speed(self) -> float:
         return self._base_speed()
@@ -58,7 +58,6 @@ class EuropeanParrot(Parrot):
 
 class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts: int) -> None:
-        super().__init__()
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self) -> float:
@@ -70,7 +69,6 @@ class AfricanParrot(Parrot):
 
 class NorwegianBlueParrot(Parrot):
     def __init__(self, voltage: float, nailed: bool) -> None:
-        super().__init__()
         self._voltage = voltage
         self._nailed = nailed
 
