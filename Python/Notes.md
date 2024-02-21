@@ -8,7 +8,4 @@ https://youtu.be/IvFX8Ivit1k?t=104
 
 2:14 Add switch(type) statement to factory method
 
-3:08 commit "Add switch statement to factory method"
-
-
-
+3:12 Emily git-commit "R replace constructor with factory method"

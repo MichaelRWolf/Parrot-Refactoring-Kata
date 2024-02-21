@@ -8,7 +8,6 @@ class ParrotType(Enum):  # If it is not available, just remove it.
 
 
 class Parrot:
-
     def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
         self._type = type_of_parrot
         self._number_of_coconuts = number_of_coconuts
@@ -16,14 +15,14 @@ class Parrot:
         self._nailed = nailed
 
     @staticmethod
-    def create_parrot(type_of_parrot, number_of_coconuts, voltage, nailed):
+    def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot' :
         match type_of_parrot:
             case  ParrotType.EUROPEAN:
-                parrot = Parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
+                parrot = Parrot(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
             case ParrotType.AFRICAN:
-                parrot = Parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
+                parrot = Parrot(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
             case ParrotType.NORWEGIAN_BLUE:
-                parrot = Parrot(type_of_parrot, number_of_coconuts, voltage, nailed)
+                parrot = Parrot(ParrotType.NORWEGIAN_BLUE, number_of_coconuts, voltage, nailed)
             case _:
                 raise ValueError(f"Illegal type {type_of_parrot}")
         return parrot
