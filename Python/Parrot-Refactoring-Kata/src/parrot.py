@@ -20,7 +20,7 @@ class Parrot:
             case ParrotType.EUROPEAN:
                 parrot = EuropeanParrot(number_of_coconuts, voltage, nailed)
             case ParrotType.AFRICAN:
-                parrot = Parrot(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
+                parrot = AfricanParrot(number_of_coconuts, voltage, nailed)
             case ParrotType.NORWEGIAN_BLUE:
                 parrot = Parrot(ParrotType.NORWEGIAN_BLUE, number_of_coconuts, voltage, nailed)
             case _:
@@ -68,3 +68,7 @@ class Parrot:
 class EuropeanParrot(Parrot):
     def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         super().__init__(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
+
+class AfricanParrot(Parrot):
+    def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
+        super().__init__(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
