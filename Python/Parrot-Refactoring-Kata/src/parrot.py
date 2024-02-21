@@ -29,7 +29,7 @@ class Parrot(ABC):
         return parrot
 
     @abstractmethod
-    def speed(self):
+    def speed(self) -> float:
         pass
 
     def cry(self):
@@ -61,7 +61,7 @@ class EuropeanParrot(Parrot):
     def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         super().__init__(ParrotType.EUROPEAN, number_of_coconuts, voltage, nailed)
 
-    def speed(self):
+    def speed(self) -> float:
         return self._base_speed()
 
 
@@ -69,7 +69,7 @@ class AfricanParrot(Parrot):
     def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         super().__init__(ParrotType.AFRICAN, number_of_coconuts, voltage, nailed)
 
-    def speed(self):
+    def speed(self) -> float:
         return max(0.0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
 
 
@@ -77,7 +77,7 @@ class NorwegianBlueParrot(Parrot):
     def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
         super().__init__(ParrotType.NORWEGIAN_BLUE, number_of_coconuts, voltage, nailed)
 
-    def speed(self):
+    def speed(self) -> float:
         if self._nailed:
             return 0
         else:
