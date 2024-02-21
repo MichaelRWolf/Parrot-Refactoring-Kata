@@ -9,19 +9,18 @@ class ParrotType(Enum):  # If it is not available, just remove it.
 
 
 class Parrot(ABC):
-    def __init__(self, type_of_parrot: ParrotType, voltage: float) -> None:
+    def __init__(self, type_of_parrot: ParrotType) -> None:
         self._type = type_of_parrot
-        self._voltage = voltage
 
     @staticmethod
     def create_parrot(type_of_parrot: ParrotType, number_of_coconuts: int, voltage: float, nailed: bool) -> 'Parrot':
         match type_of_parrot:
             case ParrotType.EUROPEAN:
-                parrot = EuropeanParrot(number_of_coconuts, voltage)
+                parrot = EuropeanParrot(number_of_coconuts)
             case ParrotType.AFRICAN:
-                parrot = AfricanParrot(number_of_coconuts, voltage)
+                parrot = AfricanParrot(number_of_coconuts)
             case ParrotType.NORWEGIAN_BLUE:
-                parrot = NorwegianBlueParrot(number_of_coconuts, voltage, nailed)
+                parrot = NorwegianBlueParrot(voltage, nailed)
             case _:
                 raise ValueError(f"Illegal type {type_of_parrot}")
         return parrot
@@ -47,8 +46,8 @@ class Parrot(ABC):
 
 
 class EuropeanParrot(Parrot):
-    def __init__(self, number_of_coconuts: int, voltage: float) -> None:
-        super().__init__(ParrotType.EUROPEAN, voltage)
+    def __init__(self, number_of_coconuts: int) -> None:
+        super().__init__(ParrotType.EUROPEAN)
 
     def speed(self) -> float:
         return self._base_speed()
@@ -58,8 +57,8 @@ class EuropeanParrot(Parrot):
 
 
 class AfricanParrot(Parrot):
-    def __init__(self, number_of_coconuts: int, voltage: float) -> None:
-        super().__init__(ParrotType.AFRICAN, voltage)
+    def __init__(self, number_of_coconuts: int) -> None:
+        super().__init__(ParrotType.AFRICAN)
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self) -> float:
@@ -70,8 +69,9 @@ class AfricanParrot(Parrot):
 
 
 class NorwegianBlueParrot(Parrot):
-    def __init__(self, number_of_coconuts: int, voltage: float, nailed: bool) -> None:
-        super().__init__(ParrotType.NORWEGIAN_BLUE, voltage)
+    def __init__(self, voltage: float, nailed: bool) -> None:
+        super().__init__(ParrotType.NORWEGIAN_BLUE)
+        self._voltage = voltage
         self._nailed = nailed
 
     def speed(self) -> float:
