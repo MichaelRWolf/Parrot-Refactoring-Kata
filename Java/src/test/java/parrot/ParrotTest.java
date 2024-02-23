@@ -81,5 +81,13 @@ public class ParrotTest {
           Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 1, 0, false);
         });
   }
+
+  @Test
+  public void getEuropeanParrotWithVoltage() {
+    assertThrows(IllegalArgumentException.class,
+        () -> {
+          Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 120, false);
+        });
+  }
 }
 

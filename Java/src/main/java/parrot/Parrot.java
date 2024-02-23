@@ -16,6 +16,10 @@ public abstract class Parrot {
           throw new IllegalArgumentException(
               String.format("numberOfCoconuts must be 0 for %s", type));
         }
+        if (voltage != 0.0) {
+          throw new IllegalArgumentException(
+              String.format("voltage must be 0 for %s", type));
+        }
         yield new EuropeanParrot();
       }
       case AFRICAN -> new AfricanParrot(numberOfCoconuts);
