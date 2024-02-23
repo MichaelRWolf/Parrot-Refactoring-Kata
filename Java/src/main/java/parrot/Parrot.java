@@ -18,12 +18,11 @@ public class Parrot {
                                     int numberOfCoconuts,
                                     double voltage,
                                     boolean isNailed) {
-    Parrot parrot = switch (type) {
+    return switch (type) {
       case EUROPEAN -> new Parrot(type, numberOfCoconuts, voltage, isNailed);
       case AFRICAN -> new Parrot(type, numberOfCoconuts, voltage, isNailed);
       case NORWEGIAN_BLUE -> new Parrot(type, numberOfCoconuts, voltage, isNailed);
     };
-    return parrot;
   }
 
   public double getSpeed() {
