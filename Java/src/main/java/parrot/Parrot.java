@@ -26,8 +26,12 @@ public abstract class Parrot {
         }
         yield new EuropeanParrot();
       }
-      case AFRICAN -> new AfricanParrot(numberOfCoconuts);
-      case NORWEGIAN_BLUE -> new NorwegianBlueParrot(voltage, isNailed);
+      case AFRICAN -> {
+        yield new AfricanParrot(numberOfCoconuts);
+      }
+      case NORWEGIAN_BLUE -> {
+        yield new NorwegianBlueParrot(voltage, isNailed);
+      }
     };
   }
 
