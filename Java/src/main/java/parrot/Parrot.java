@@ -11,7 +11,7 @@ public abstract class Parrot {
                              double voltage,
                              boolean isNailed) {
     return switch (type) {
-      case EUROPEAN -> new EuropeanParrot(numberOfCoconuts, voltage);
+      case EUROPEAN -> new EuropeanParrot();
       case AFRICAN -> new AfricanParrot(numberOfCoconuts, voltage);
       case NORWEGIAN_BLUE -> new NorwegianBlueParrot(voltage, isNailed);
     };

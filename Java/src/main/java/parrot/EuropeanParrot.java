@@ -2,16 +2,14 @@ package parrot;
 
 public class EuropeanParrot extends Parrot {
 
-  protected final double voltage;
-
-  public EuropeanParrot(int numberOfCoconuts, double voltage) {
+  public EuropeanParrot() {
     super();
-    this.voltage = voltage;
   }
 
   @Override
   public double getSpeed() {
     return getBaseSpeed();
+
   }
 
   @Override
