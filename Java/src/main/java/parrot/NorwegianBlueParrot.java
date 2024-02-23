@@ -16,6 +16,8 @@ public class NorwegianBlueParrot extends Parrot {
     return (isNailed) ? 0 : getBaseSpeed(voltage);
   }
 
+
+  //  NorwegianBlueParrot does not have a fixed base speed.  It is dependent on the voltage.
   protected double getBaseSpeed(double voltage) {
     return Math.min(24.0, voltage * getBaseSpeed());
   }
