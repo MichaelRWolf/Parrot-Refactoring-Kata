@@ -2,6 +2,7 @@ package parrot;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -72,4 +73,13 @@ public class ParrotTest {
     Parrot parrot = Parrot.createParrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 0, false);
     assertEquals("...", parrot.getCry());
   }
+
+  @Test
+  public void getEuropeanParrotWithCoconuts() {
+    assertThrows(IllegalArgumentException.class,
+        () -> {
+          Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 1, 0, false);
+        });
+  }
 }
+
