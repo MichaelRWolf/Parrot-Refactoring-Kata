@@ -18,14 +18,11 @@ public class Parrot {
                                     int numberOfCoconuts,
                                     double voltage,
                                     boolean isNailed) {
-    Parrot parrot = null;
-    if (type == ParrotTypeEnum.EUROPEAN) {
-      parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
-    } else if (type == ParrotTypeEnum.AFRICAN) {
-      parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
-    } else if (type == ParrotTypeEnum.NORWEGIAN_BLUE) {
-      parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
-    }
+    Parrot parrot = switch (type) {
+      case EUROPEAN -> new Parrot(type, numberOfCoconuts, voltage, isNailed);
+      case AFRICAN -> new Parrot(type, numberOfCoconuts, voltage, isNailed);
+      case NORWEGIAN_BLUE -> new Parrot(type, numberOfCoconuts, voltage, isNailed);
+    };
     return parrot;
   }
 
