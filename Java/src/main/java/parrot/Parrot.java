@@ -14,7 +14,9 @@ public class Parrot {
     this.isNailed = isNailed;
   }
 
-  public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage,
+  public static Parrot createParrot(ParrotTypeEnum type,
+                                    int numberOfCoconuts,
+                                    double voltage,
                                     boolean isNailed) {
     return new Parrot(type, numberOfCoconuts, voltage, isNailed);
   }
