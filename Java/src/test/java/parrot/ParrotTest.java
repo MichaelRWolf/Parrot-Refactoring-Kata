@@ -77,24 +77,19 @@ public class ParrotTest {
   @Test
   public void getEuropeanParrotWithCoconuts() {
     assertThrows(IllegalArgumentException.class,
-        () -> {
-          Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 1, 0, false);
-        });
+        () -> Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 1, 0, false));
   }
 
   @Test
   public void getEuropeanParrotWithVoltage() {
     assertThrows(IllegalArgumentException.class,
-        () -> {
-          Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 120, false);
-        });
+        () -> Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 120, false));
   }
+
   @Test
   public void getEuropeanParrotWithNailed() {
     assertThrows(IllegalArgumentException.class,
-        () -> {
-          Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 0, true);
-        });
+        () -> Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 0, true));
   }
 }
 
