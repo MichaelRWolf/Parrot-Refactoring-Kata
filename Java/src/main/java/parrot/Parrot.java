@@ -18,7 +18,9 @@ public class Parrot {
                                     int numberOfCoconuts,
                                     double voltage,
                                     boolean isNailed) {
-    return new Parrot(type, numberOfCoconuts, voltage, isNailed);
+    Parrot parrot;
+    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+    return parrot;
   }
 
   public double getSpeed() {
