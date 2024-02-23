@@ -18,7 +18,11 @@ public abstract class Parrot {
         }
         if (voltage != 0.0) {
           throw new IllegalArgumentException(
-              String.format("voltage must be 0 for %s", type));
+              String.format("voltage must be 0.0 for %s", type));
+        }
+        if (isNailed) {
+          throw new IllegalArgumentException(
+              String.format("isNailed must be false for %s", type));
         }
         yield new EuropeanParrot();
       }

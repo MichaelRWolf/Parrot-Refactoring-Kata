@@ -89,5 +89,12 @@ public class ParrotTest {
           Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 120, false);
         });
   }
+  @Test
+  public void getEuropeanParrotWithNailed() {
+    assertThrows(IllegalArgumentException.class,
+        () -> {
+          Parrot.createParrot(ParrotTypeEnum.EUROPEAN, 0, 0, true);
+        });
+  }
 }
 
