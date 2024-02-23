@@ -19,9 +19,9 @@ public abstract class Parrot {
 
   public abstract double getSpeed();
 
+  public abstract String getCry();
+
   protected double getBaseSpeed() {
     return 12.0;
   }
-
-  public abstract String getCry();
 }
