@@ -2,10 +2,8 @@ package parrot;
 
 public abstract class Parrot {
 
-  protected final boolean isNailed;
-
-  Parrot(boolean isNailed) {
-    this.isNailed = isNailed;
+  Parrot() {
+    // Do nothing.
   }
 
   static Parrot createParrot(ParrotTypeEnum type,
@@ -13,8 +11,8 @@ public abstract class Parrot {
                              double voltage,
                              boolean isNailed) {
     return switch (type) {
-      case EUROPEAN -> new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
-      case AFRICAN -> new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+      case EUROPEAN -> new EuropeanParrot(numberOfCoconuts, voltage);
+      case AFRICAN -> new AfricanParrot(numberOfCoconuts, voltage);
       case NORWEGIAN_BLUE -> new NorwegianBlueParrot(voltage, isNailed);
     };
   }
