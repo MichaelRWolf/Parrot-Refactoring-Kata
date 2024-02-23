@@ -2,11 +2,9 @@ package parrot;
 
 public abstract class Parrot {
 
-  protected final double voltage;
   protected final boolean isNailed;
 
-  Parrot(int numberOfCoconuts, double voltage, boolean isNailed) {
-    this.voltage = voltage;
+  Parrot(boolean isNailed) {
     this.isNailed = isNailed;
   }
 
@@ -17,7 +15,7 @@ public abstract class Parrot {
     return switch (type) {
       case EUROPEAN -> new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
       case AFRICAN -> new AfricanParrot(numberOfCoconuts, voltage, isNailed);
-      case NORWEGIAN_BLUE -> new NorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
+      case NORWEGIAN_BLUE -> new NorwegianBlueParrot(voltage, isNailed);
     };
   }
 

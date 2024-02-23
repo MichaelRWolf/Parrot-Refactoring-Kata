@@ -2,8 +2,11 @@ package parrot;
 
 public class NorwegianBlueParrot extends Parrot {
 
-  public NorwegianBlueParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
-    super(0, voltage, isNailed);
+  protected final double voltage;
+
+  public NorwegianBlueParrot(double voltage, boolean isNailed) {
+    super(isNailed);
+    this.voltage = voltage;
   }
 
   @Override
